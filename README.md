@@ -1,20 +1,59 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Retail Business Intelligence Dashboard
 
-# Run and deploy your AI Studio app
+An end-to-end **business intelligence dashboard for retail analytics**, built with **React (TypeScript) + FastAPI**.
 
-This contains everything you need to run your app locally.
+This project integrates **transactional data, customer information, inventory, and recommendation outputs** into an interactive dashboard to support business decision-making.
 
-View your app in AI Studio: https://ai.studio/apps/79e32398-d432-409c-8c0f-f36d52612ffd
+---
 
-## Run Locally
+# Dashboard Preview
 
-**Prerequisites:**  Node.js
+![Dashboard Overview](assets/overview.png)
 
+> Add screenshots of your dashboard pages below.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Overview Page
+![Overview](assets/overview.png)
+
+### Customer Intelligence
+![Customer](assets/customer.png)
+
+### Product Intelligence
+![Product](assets/product.png)
+
+### Recommendation System
+![Recommendation](assets/recommender.png)
+
+---
+
+# Features
+
+- Interactive **business overview dashboard**
+- Customer segmentation and behavior analysis
+- Product and inventory monitoring
+- Recommendation system analytics
+- KPI tracking for business insights
+- Multi-filter exploration (date, category, segment, country)
+
+---
+
+# Tech Stack
+
+### Frontend
+- React
+- TypeScript
+- Vite
+
+### Backend
+- FastAPI
+- Python
+- Pandas
+
+### Data
+- JSON datasets
+- Custom recommendation metrics
+
+---
+
+# Project Structure
+
