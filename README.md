@@ -1,16 +1,14 @@
 # Retail Business Intelligence Dashboard
 
-An end-to-end **business intelligence dashboard for retail analytics**, built with **React (TypeScript) + FastAPI**.
+An end-to-end **Business Intelligence Dashboard for Retail Analytics**, built with **React (TypeScript) + FastAPI**.
 
-This project integrates **transactional data, customer information, inventory, and recommendation outputs** into an interactive dashboard to support business decision-making.
+This project integrates **transactional data, customer information, inventory, and recommendation outputs** into an interactive dashboard designed to support business decision-making.
 
 ---
 
 # Dashboard Preview
 
-![Dashboard Overview](assets/overview.png)
-
-> Add screenshots of your dashboard pages below.
+> Replace the images below with screenshots of your dashboard pages.
 
 ### Overview Page
 ![Overview](assets/overview.png)
@@ -31,7 +29,7 @@ This project integrates **transactional data, customer information, inventory, a
 - Interactive **business overview dashboard**
 - Customer segmentation and behavior analysis
 - Product and inventory monitoring
-- Recommendation system analytics
+- Recommendation system performance analysis
 - KPI tracking for business insights
 - Multi-filter exploration (date, category, segment, country)
 
@@ -49,13 +47,15 @@ This project integrates **transactional data, customer information, inventory, a
 - Python
 - Pandas
 
-### Data
+### Data Processing
 - JSON datasets
 - Custom recommendation metrics
 
 ---
 
 # Project Structure
+
+```
 retail-bi-dashboard
 │
 ├── backend/                # FastAPI backend APIs
@@ -67,7 +67,7 @@ retail-bi-dashboard
 │   ├── package.json
 │   └── vite.config.ts
 │
-├── data/                   # dataset (excluded from repository)
+├── data/                   # dataset (not included due to size)
 │
 ├── assets/                 # dashboard screenshots
 │   ├── overview.png
@@ -77,3 +77,83 @@ retail-bi-dashboard
 │
 ├── README.md
 └── .gitignore
+```
+
+---
+
+# How to Run the Project
+
+## 1️⃣ Backend
+
+```
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
+Backend will start at:
+
+```
+http://localhost:8000
+```
+
+---
+
+## 2️⃣ Frontend
+
+```
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend will start at:
+
+```
+http://localhost:5173
+```
+
+---
+
+# Data
+
+The full dataset used in this project is approximately **1GB**, which exceeds GitHub’s file size limits.
+
+Therefore, the original dataset is **not included in this repository**.
+
+You can replace the dataset with your own data following the same schema.
+
+---
+
+# Example Business Insights
+
+This dashboard enables business users to:
+
+- Monitor **sales performance and key KPIs**
+- Analyze **customer segments and purchasing behavior**
+- Track **product inventory across stores**
+- Evaluate **recommendation system performance**
+- Identify **out-of-stock risks and sales opportunities**
+
+---
+
+# Future Improvements
+
+Possible future extensions include:
+
+- Real-time data pipeline
+- Recommendation model training pipeline
+- Cloud deployment
+- Advanced drill-down analytics
+
+---
+
+# Author
+
+**<<YOUR NAME>>**
+
+MSc Data Science & Business Analytics  
+ESSEC Business School & CentraleSupélec
+
+GitHub:  
+<<YOUR GITHUB LINK>>
