@@ -56,4 +56,24 @@ This project integrates **transactional data, customer information, inventory, a
 ---
 
 # Project Structure
-
+retail-bi-dashboard
+│
+├── backend/                # FastAPI backend APIs
+│   ├── main.py
+│   └── requirements.txt
+│
+├── frontend/               # React dashboard
+│   ├── src/
+│   ├── package.json
+│   └── vite.config.ts
+│
+├── data/                   # dataset (excluded from repository)
+│
+├── assets/                 # dashboard screenshots
+│   ├── overview.png
+│   ├── customer.png
+│   ├── product.png
+│   └── recommender.png
+│
+├── README.md
+└── .gitignore
