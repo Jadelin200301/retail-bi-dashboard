@@ -22,8 +22,11 @@ This project integrates **transactional data, customer information, inventory, a
 
 ### Recommendation System
 ![Recommendation](assets/recommender1.png)
+
 ![Recommendation](assets/recommender2.png)
+
 ![Recommendation](assets/recommender3.png)
+
 ---
 
 # Features
