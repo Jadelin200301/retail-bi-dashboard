@@ -9,7 +9,6 @@ from pydantic import BaseModel
 from dateutil.parser import isoparse
 
 # ---------- Paths ----------
-# 约定：你的 data/ 在项目根目录下（和前端同级）
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DATA_DIR = os.path.join(PROJECT_ROOT, "data")
 
@@ -279,11 +278,11 @@ def reco_metrics(
     segment: Optional[str] = None,
     category: Optional[str] = None,
     universe: Optional[str] = None,
-    inStockOnly: bool = Query(False),  # ✅ 直接用 bool
+    inStockOnly: bool = Query(False),  
 ):
     filtered = recommendations
 
-    # ✅ date filter only when both present and parse OK
+    # date filter only when both present and parse OK
     sdt = safe_parse_dt(start)
     edt = safe_parse_dt(end)
 
@@ -310,11 +309,11 @@ def reco_metrics(
     if universe and universe != "All":
         filtered = [r for r in filtered if r.get("universe") == universe]
 
-    # ✅ inStockOnly
+    #  inStockOnly
     if inStockOnly:
         filtered = [r for r in filtered if to_int(r.get("inStockFlag"), 0) == 1]
 
-    # ✅ segment join with clients (and avoid KeyError)
+    # segment join with clients (and avoid KeyError)
     if segment and segment != "All":
         tmp = []
         for r in filtered:
@@ -326,7 +325,7 @@ def reco_metrics(
                 tmp.append(r)
         filtered = tmp
 
-    # ✅ coverageUsers avoid KeyError / None
+    #  coverageUsers avoid KeyError / None
     cids = {r.get("clientId") for r in filtered if r.get("clientId")}
     coverageUsers = len(cids)
 
@@ -334,7 +333,7 @@ def reco_metrics(
     coverageRate = (coverageUsers / totalClients) if totalClients else 0
     avgRecsPerUser = (len(filtered) / coverageUsers) if coverageUsers else 0
 
-    # ✅ rank parse safe
+    #  rank parse safe
     topKRecs = [r for r in filtered if to_int(r.get("rank"), 10**9) <= k]
     inStockCount = sum(1 for r in topKRecs if to_int(r.get("inStockFlag"), 0) == 1)
     inStockRateAtK = (inStockCount / len(topKRecs)) if topKRecs else 0
@@ -345,7 +344,7 @@ def reco_metrics(
     "lgb":    {"avgHits": 0.186734, "coverage": 0.491202, "hitRate": 0.164664, "ndcg": 0.066435, "precision": 0.006224, "recall": 0.148514, "users": 8654},
     "xgb":    {"avgHits": 0.183383, "coverage": 0.477302, "hitRate": 0.162815, "ndcg": 0.065699, "precision": 0.006113, "recall": 0.146313, "users": 8654},
 }
-    # ✅ fixed metrics (demo numbers)
+    #  fixed metrics (demo numbers)
     # choose a main method to display on top cards; here we use xgb by default
     main_m = RECO_FIXED["xgb"]
 
@@ -355,7 +354,7 @@ def reco_metrics(
     precisionAtK = main_m["precision"]
     ndcgAtK = main_m["ndcg"]
 
-    # ✅ fixed byStrategy table for demo
+    #  fixed byStrategy table for demo
     byStrategy = [
         {"strategy": "Recall",      "inStockRate": 0.0, "hitRate": RECO_FIXED["recall"]["hitRate"], "coverageRate": RECO_FIXED["recall"]["coverage"], "ndcgAtK": RECO_FIXED["recall"]["ndcg"], "precisionAtK": RECO_FIXED["recall"]["precision"], "avgRecsPerUser": RECO_FIXED["recall"]["avgHits"], "users": RECO_FIXED["recall"]["users"]},
         {"strategy": "Rerank(LGB)",  "inStockRate": 0.0, "hitRate": RECO_FIXED["lgb"]["hitRate"],    "coverageRate": RECO_FIXED["lgb"]["coverage"],   "ndcgAtK": RECO_FIXED["lgb"]["ndcg"],   "precisionAtK": RECO_FIXED["lgb"]["precision"],   "avgRecsPerUser": RECO_FIXED["lgb"]["avgHits"],   "users": RECO_FIXED["lgb"]["users"]},
