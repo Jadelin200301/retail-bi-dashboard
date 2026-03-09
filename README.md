@@ -80,6 +80,8 @@ retail-bi-dashboard
 │   ├── product.png
 │   └── recommender.png
 │
+├── recommender/
+├── ├── recommender.ipynb
 ├── README.md
 └── .gitignore
 ```
@@ -88,7 +90,7 @@ retail-bi-dashboard
 
 # How to Run the Project
 
-## 1️⃣ Backend
+## Backend
 
 ```
 cd backend
@@ -104,7 +106,7 @@ http://localhost:8000
 
 ---
 
-## 2️⃣ Frontend
+## Frontend
 
 ```
 cd frontend
@@ -127,6 +129,15 @@ The full dataset used in this project is approximately **1GB**, which exceeds Gi
 Therefore, the original dataset is **not included in this repository**.
 
 You can replace the dataset with your own data following the same schema.
+
+---
+
+## Recommendation Workflow
+
+1. Generate candidate items for each customer
+2. Apply ranking / reranking strategies(XGB/LGB)
+3. Evaluate recommendation quality with offline metrics
+4. Export results to the dashboard for business analysis
 
 ---
 
