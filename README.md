@@ -14,14 +14,16 @@ This project integrates **transactional data, customer information, inventory, a
 ![Overview](assets/overview.png)
 
 ### Customer Intelligence
-![Customer](assets/customer.png)
+![Customer](assets/customer1.png)
+![Customer](assets/customer2.png)
 
 ### Product Intelligence
 ![Product](assets/product.png)
 
 ### Recommendation System
-![Recommendation](assets/recommender.png)
-
+![Recommendation](assets/recommender1.png)
+![Recommendation](assets/recommender2.png)
+![Recommendation](assets/recommender3.png)
 ---
 
 # Features
