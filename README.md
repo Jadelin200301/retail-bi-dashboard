@@ -153,12 +153,3 @@ Possible future extensions include:
 
 ---
 
-# Author
-
-**<<YOUR NAME>>**
-
-MSc Data Science & Business Analytics  
-ESSEC Business School & CentraleSupélec
-
-GitHub:  
-<<YOUR GITHUB LINK>>
