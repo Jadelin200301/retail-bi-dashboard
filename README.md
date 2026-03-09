@@ -8,8 +8,6 @@ This project integrates **transactional data, customer information, inventory, a
 
 # Dashboard Preview
 
-> Replace the images below with screenshots of your dashboard pages.
-
 ### Overview Page
 ![Overview](assets/overview.png)
 
