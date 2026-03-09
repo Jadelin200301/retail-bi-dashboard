@@ -82,6 +82,7 @@ retail-bi-dashboard
 │
 ├── recommender/
 ├── ├── recommender.ipynb
+│
 ├── README.md
 └── .gitignore
 ```
